@@ -3,8 +3,8 @@ const CONFIG = {
     API_URL: 'https://www.iadouble.com.br/api/dados',
     CADASTRO_URL: 'https://7k.bet.br?ref=61e9227a88a4',
     TELEGRAM_URL: 'https://t.me/yasmindouble14x',
-    WHATSAPP_URL: 'https://t.me/Diegosilva010',
-    INSTAGRAM_URL: 'https://t.me/Diegosilva010',
+    WHATSAPP_URL: 'https://www.instagram.com/aindarells?igsh=eG43MTAxb3Q4cDhh',
+    INSTAGRAM_URL: 'https://www.instagram.com/aindarells?igsh=eG43MTAxb3Q4cDhh',
     WHITE_LOGO: 'https://prod-double-new-be-o-br1.banana.games/assets/LOGO.da4d6216.svg',
     RED_LOGO: 'https://blaze.bet.br/images/roulette/red-0.svg',
     BLACK_LOGO: 'https://blaze.bet.br/images/roulette/black-0.svg'
