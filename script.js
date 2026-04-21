@@ -2,7 +2,7 @@
 const CONFIG = {
     API_URL: 'https://www.iadouble.com.br/api/dados',
     CADASTRO_URL: 'https://7k.bet.br?ref=61e9227a88a4',
-    TELEGRAM_URL: 'https://t.me/grupochat1235',
+    TELEGRAM_URL: 'https://t.me/yasmindouble14x',
     WHATSAPP_URL: 'https://t.me/Diegosilva010',
     INSTAGRAM_URL: 'https://t.me/Diegosilva010',
     WHITE_LOGO: 'https://prod-double-new-be-o-br1.banana.games/assets/LOGO.da4d6216.svg',
