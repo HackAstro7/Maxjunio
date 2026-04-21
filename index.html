@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>IA Hacker · TEMPO REAL · PROTEÇÃO G1</title>
+</head>
+<body>
+    <div id="hacker-bg"></div>
+    <div class="overlay"></div>
+
+    <!-- TELA DE BOAS-VINDAS -->
+    <div id="welcomeScreen" class="welcome-screen">
+        <div class="welcome-card">
+            <h1><i class="fas fa-robot"></i> IA HACKER</h1>
+            <p>Estratégia avançada · Proteção G1 · Sinais em tempo real</p>
+            <div class="double-buttons">
+                <button id="btnCriarConta" class="btn-welcome">
+                    <i class="fas fa-user-plus"></i> CRIAR CONTA AGORA
+                </button>
+                <button id="btnAcessarDouble" class="btn-welcome secondary">
+                    <i class="fas fa-bolt"></i> ACESSAR DOUBLE MAX
+                </button>
+            </div>
+            <div class="footer-note">✔️ Sistema autônomo | G1 | Branco14x protegido</div>
+        </div>
+    </div>
+
+    <!-- APLICATIVO PRINCIPAL -->
+    <div class="container" id="mainApp">
+        <div class="hora-fixa"><span id="horaAtual">--:--:--</span></div>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>🎯 STATUS</h3>
+                <div class="card-value" id="statusRobo">ONLINE</div>
+                <div>
+                    <button class="status-btn" id="btnAbrirBanca">
+                        <i class="fas fa-chart-line"></i> Gestão de Banca
+                    </button>
+                </div>
+            </div>
+            <div class="card">
+                <h3>📊 SINAIS</h3>
+                <div class="card-value" id="sinaisHoje">0</div>
+                <div>Hoje</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>📊 PLACAR DETALHADO (G1)</h3>
+            <div class="placar-grid">
+                <div class="placar-item win-primeira">
+                    <div class="placar-emoji">✅</div>
+                    <div class="placar-valor" id="placarWinPrimeira">0</div>
+                    <div class="placar-label">1ª Entrada</div>
+                </div>
+                <div class="placar-item win-gale1">
+                    <div class="placar-emoji">🔄</div>
+                    <div class="placar-valor" id="placarWinGale1">0</div>
+                    <div class="placar-label">Gale 1</div>
+                </div>
+                <div class="placar-item win-branco">
+                    <div class="placar-emoji">
+                        <img src="https://prod-double-new-be-o-br1.banana.games/assets/LOGO.da4d6216.svg" alt="Branco">
+                    </div>
+                    <div class="placar-valor" id="placarWinBranco">0</div>
+                    <div class="placar-label">Branco14x</div>
+                </div>
+                <div class="placar-item loss">
+                    <div class="placar-emoji">❌</div>
+                    <div class="placar-valor" id="placarLoss">0</div>
+                    <div class="placar-label">Loss</div>
+                </div>
+            </div>
+            <div class="placar-stats">
+                <div class="stat-item">
+                    <span>🔥 Consecutivas:</span> 
+                    <strong id="placarConsecutivas">0</strong>
+                </div>
+                <div class="stat-item">
+                    <span>📊 Assertividade:</span> 
+                    <strong id="placarAssertividade">0%</strong>
+                </div>
+                <div class="stat-item">
+                    <span>🏆 Máximo:</span> 
+                    <strong id="placarMaximo">0</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTAINER DO SINAL -->
+        <div class="sinal-container" id="sinalContainer">
+            <div class="sinal-principal">
+                <div class="logo-sinal-box">
+                    <img class="logo-sinal-imagem" id="sinalLogo" src="" alt="Sinal">
+                    <div class="logo-sinal-label" id="sinalLabel">SINAL</div>
+                </div>
+                
+                <div class="seta-direcao">→</div>
+                
+                <div class="logo-protecao-box">
+                    <img class="logo-protecao-imagem" 
+                         src="https://prod-double-new-be-o-br1.banana.games/assets/LOGO.da4d6216.svg" 
+                         alt="Proteção Branco">
+                    <div class="logo-protecao-label">PROTEÇÃO BRANCO14x</div>
+                </div>
+            </div>
+            
+            <div class="gale-status" id="galeStatus" style="display: none;"></div>
+            <div id="sinalResultado" style="display: none;">
+                <div class="sinal-resultado" id="resultadoTexto">---</div>
+            </div>
+            <div style="margin-top: 10px;" id="sinalStatusDisplay">AGUARDANDO</div>
+        </div>
+
+        <!-- CONTADOR BRANCO -->
+        <div class="contador-branco-container">
+            <div class="contador-branco-principal">
+                <div class="contador-item">
+                    <div class="contador-valor" id="contadorBrancoCasas">0</div>
+                    <div class="contador-label">jogos sem</div>
+                </div>
+                <div class="contador-item">
+                    <div class="contador-valor" id="contadorBrancoMinutos">0</div>
+                    <div class="contador-label">minutos sem</div>
+                </div>
+                <div class="contador-item">
+                    <div class="contador-valor" id="totalBrancosHoje">0</div>
+                    <div class="contador-label">Branco14x hoje</div>
+                </div>
+            </div>
+            <div class="historico-branco">
+                <div class="historico-branco-titulo">
+                    <img src="https://prod-double-new-be-o-br1.banana.games/assets/LOGO.da4d6216.svg" alt="Branco"> 
+                    Últimos Branco14x:
+                </div>
+                <div class="historico-branco-grid" id="historicoBrancos"></div>
+            </div>
+        </div>
+
+        <!-- RESULTADOS -->
+        <div class="card">
+            <h3>🎰 ÚLTIMOS RESULTADOS</h3>
+            <div id="resultados-grade" class="resultados-grade">
+                <div class="loading">Carregando...</div>
+            </div>
+        </div>
+
+        <!-- HISTÓRICO DE SINAIS -->
+        <div class="card">
+            <h3>📋 HISTÓRICO DE SINAIS</h3>
+            <div id="historicoSinais" class="historico-sinais-container"></div>
+        </div>
+
+        <button class="btn" id="btnAtualizar">
+            <i class="fas fa-sync-alt"></i> ATUALIZAR SINAIS
+        </button>
+        <div style="height:80px;"></div>
+    </div>
+
+    <!-- NAVEGAÇÃO -->
+    <div class="navigation">
+        <a href="https://t.me/grupochat1235" target="_blank" class="nav-button telegram">
+            <i class="fab fa-telegram-plane"></i>
+            <span>Telegram</span>
+        </a>
+        <a href="https://t.me/Diegosilva010" target="_blank" class="nav-button instagram">
+            <i class="fab fa-instagram"></i>
+            <span>Instagram</span>
+        </a>
+        <a href="#" class="nav-button home">
+            <i class="fas fa-home"></i>
+            <span>Início</span>
+        </a>
+        <a href="https://t.me/Diegosilva010" target="_blank" class="nav-button whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+        </a>
+    </div>
+
+    <!-- CONTROLES -->
+    <div class="sound-control" id="soundControl">
+        <i class="fas fa-volume-up" id="soundIcon"></i>
+    </div>
+
+    <!-- MODAL BANCA -->
+    <div id="modalBanca" class="modal-banca">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-wallet"></i> Gestão de Banca</h2>
+                <button class="modal-close" id="fecharModal">&times;</button>
+            </div>
+            <div class="banca-valor" id="bancaAtualDisplay">R$ 0,00</div>
+            <div class="banca-input-group">
+                <label>💰 Saldo Inicial (R$)</label>
+                <input type="number" id="bancaInicial" placeholder="Ex: 1000" step="0.01">
+            </div>
+            <div class="banca-stats">
+                <div class="banca-card-small">
+                    <span>📈 Lucro Total</span>
+                    <strong id="lucroTotal">R$ 0,00</strong>
+                </div>
+                <div class="banca-card-small">
+                    <span>🎯 Resultado</span>
+                    <strong id="resultadoTotal">0%</strong>
+                </div>
+            </div>
+            <div class="banca-input-group">
+                <label>➕ Adicionar Lucro/Perda (R$)</label>
+                <input type="number" id="valorMovimento" placeholder="+50 ou -30" step="0.01">
+                <button class="btn-banca" id="btnAdicionarMovimento">Registrar</button>
+            </div>
+            <div class="banca-input-group">
+                <button class="btn-banca btn-banca-danger" id="btnResetarBanca">Resetar Banca</button>
+            </div>
+            <div class="historico-lucro">
+                <div style="font-size:0.8em;">📜 Histórico</div>
+                <div id="historicoMovimentos"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
