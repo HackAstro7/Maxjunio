@@ -1,6 +1,6 @@
 // ========== CONFIGURAÇÕES E LINKS ==========
 const CONFIG = {
-    API_URL: 'https://www.iadouble.com.br/api/data',
+    API_URL: 'http://149.56.245.34:5000/api/data',
     CADASTRO_URL: 'https://sortenabet.bet.br?ref=1b14dff09ea8',
     TELEGRAM_URL: 'https://t.me/yasmindouble14x',
     WHATSAPP_URL: 'https://www.instagram.com/aindarells?igsh=eG43MTAxb3Q4cDhh',
